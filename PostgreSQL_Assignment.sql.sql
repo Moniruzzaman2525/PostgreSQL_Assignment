@@ -63,7 +63,7 @@ SELECT title FROM books WHERE stock = 0;
 SELECT * FROM books ORDER BY price DESC LIMIT 1;
 
 -- Find the total number of orders placed by each customer
-SELECT customers.name as customer_name, COUNT(orders.id) AS total_orders
+SELECT customers.name as name, COUNT(orders.id) AS total_orders
 FROM customers
 LEFT JOIN orders ON customers.id = orders.customer_id
 GROUP BY customers.id, customers.name;
@@ -74,8 +74,11 @@ FROM orders
 JOIN books ON orders.book_id = books.id;
 
 -- List all customers who have placed more than one order.
-SELECT customers.name as customer_name, COUNT(orders.id) AS total_orders
+SELECT customers.name as name, COUNT(orders.id) AS orders_count
 FROM customers
 LEFT JOIN orders ON customers.id = orders.customer_id
 GROUP BY customers.id, customers.name
 HAVING COUNT(orders.id) > 1;
+
+-- Find the average price of books in the store.
+SELECT AVG(price) as avg_book_price FROM books;
