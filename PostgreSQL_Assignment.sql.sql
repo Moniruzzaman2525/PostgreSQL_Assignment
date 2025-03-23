@@ -52,3 +52,9 @@ INSERT INTO orders (customer_id, book_id, quantity) VALUES
 (1, 5, 2),
 (2, 3, 1),
 (3, 1, 3);
+
+-- get all orders data into the "orders" table
+SELECT * FROM orders;
+
+-- Find books that are out of stock
+SELECT title FROM books WHERE stock = 0;
