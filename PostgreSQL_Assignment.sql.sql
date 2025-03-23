@@ -33,7 +33,9 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Postgresql The Definitive Guide', 'Jhankar Mahbub', 30, 8, 2024),
 ('Typescript The Definitive Guide', 'Abdul Kalam', 50, 3, 2022),
 ('Redux The Definitive Guide', 'Mir', 20, 0, 2020),
-('Next js The Definitive Guide', 'Tonmoy Pervez', 25, 5, 2023);
+('Next js The Definitive Guide', 'Tonmoy Pervez', 25, 5, 2023),
+('Love Story', 'Ikhtiaj Arif', 40, 10, 1999),
+('Life Story', 'Hasan Mahbub', 35, 5, 1995);
 
 -- get all books from the "books" table
 SELECT * FROM books;
@@ -87,3 +89,7 @@ SELECT AVG(price) as avg_book_price FROM books;
 UPDATE books
 SET price = price * 1.10
 WHERE published_year < 2000;
+
+--  Delete customers who haven't placed any orders.
+DELETE FROM customers
+WHERE id NOT IN (SELECT DISTINCT customer_id FROM orders);
