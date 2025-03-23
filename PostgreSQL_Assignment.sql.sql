@@ -82,3 +82,8 @@ HAVING COUNT(orders.id) > 1;
 
 -- Find the average price of books in the store.
 SELECT AVG(price) as avg_book_price FROM books;
+
+--Increase the price of all books published before 2000 by 10%.
+UPDATE books
+SET price = price * 1.10
+WHERE published_year < 2000;
