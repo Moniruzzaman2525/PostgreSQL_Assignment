@@ -63,9 +63,12 @@ SELECT title FROM books WHERE stock = 0;
 SELECT * FROM books ORDER BY price DESC LIMIT 1;
 
 -- Find the total number of orders placed by each customer
-SELECT customers.id as customer_id, customers.name as customer_name, COUNT(orders.id) AS total_orders
+SELECT customers.name as customer_name, COUNT(orders.id) AS total_orders
 FROM customers
 LEFT JOIN orders ON customers.id = orders.customer_id
 GROUP BY customers.id, customers.name;
 
-
+-- Calculate the total revenue generated from book sales.
+SELECT SUM(price * quantity) AS total_revenue
+FROM orders
+JOIN books ON orders.book_id = books.id;    
