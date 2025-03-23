@@ -44,4 +44,5 @@ INSERT INTO customers (name, email, joined_date) VALUES
 ('Arif', 'arif@email.com', '2025-01-15'),
 ('Anik', 'anik@email.com', '2025-01-20');
 
-
+-- get all customers data into the "customers" table
+SELECT * FROM customers;
