@@ -46,3 +46,9 @@ INSERT INTO customers (name, email, joined_date) VALUES
 
 -- get all customers data into the "customers" table
 SELECT * FROM customers;
+
+--  inserting sample data into the "orders" table
+INSERT INTO orders (customer_id, book_id, quantity) VALUES
+(1, 5, 2),
+(2, 3, 1),
+(3, 1, 3);
