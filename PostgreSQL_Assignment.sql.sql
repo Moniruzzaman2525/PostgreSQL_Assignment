@@ -9,6 +9,7 @@ CREATE TABLE books (
     published_year INT
 );
 
+
 -- Create the "customers" table
 CREATE TABLE customers (
     id SERIAL PRIMARY KEY,
@@ -16,6 +17,7 @@ CREATE TABLE customers (
     email VARCHAR(50) NOT NULL,
     joined_date DATE DEFAULT CURRENT_DATE
 );
+
 
 -- Create an "orders" table
 CREATE TABLE orders (
@@ -25,6 +27,7 @@ CREATE TABLE orders (
     quantity INT CHECK (quantity > 0),
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 -- Inserting sample data into the "books" table
 INSERT INTO books (title, author, price, stock, published_year) VALUES
@@ -37,8 +40,10 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Love Story', 'Ikhtiaj Arif', 40, 10, 1999),
 ('Life Story', 'Hasan Mahbub', 35, 5, 1995);
 
+
 -- get all books from the "books" table
 SELECT * FROM books;
+
 
 -- inserting sample data into the "customers" table
 INSERT INTO customers (name, email, joined_date) VALUES
@@ -46,8 +51,10 @@ INSERT INTO customers (name, email, joined_date) VALUES
 ('Arif', 'arif@email.com', '2025-01-15'),
 ('Anik', 'anik@email.com', '2025-01-20');
 
+
 -- get all customers data into the "customers" table
 SELECT * FROM customers;
+
 
 --  inserting sample data into the "orders" table
 INSERT INTO orders (customer_id, book_id, quantity) VALUES
@@ -55,14 +62,18 @@ INSERT INTO orders (customer_id, book_id, quantity) VALUES
 (2, 3, 1),
 (3, 1, 3);
 
+
 -- get all orders data into the "orders" table
 SELECT * FROM orders;
+
 
 -- Find books that are out of stock
 SELECT title FROM books WHERE stock = 0;
 
+
 -- Retrieve the most expensive book in the store.
 SELECT * FROM books ORDER BY price DESC LIMIT 1;
+
 
 -- Find the total number of orders placed by each customer
 SELECT customers.name as name, COUNT(orders.id) AS total_orders
@@ -71,10 +82,12 @@ LEFT JOIN orders ON customers.id = orders.customer_id
 WHERE orders.quantity > 0
 GROUP BY customers.id ORDER BY total_orders DESC;
 
+
 -- Calculate the total revenue generated from book sales.
 SELECT SUM(price * quantity) AS total_revenue
 FROM orders
 JOIN books ON orders.book_id = books.id;
+
 
 -- List all customers who have placed more than one order.
 SELECT customers.name as name, COUNT(orders.id) AS orders_count
@@ -83,13 +96,17 @@ LEFT JOIN orders ON customers.id = orders.customer_id
 GROUP BY customers.id, customers.name
 HAVING COUNT(orders.id) > 1;
 
--- Find the average price of books in the store.
-SELECT AVG(price) as avg_book_price FROM books;
+
+-- Find the average price of books in the store show only 2 decimal places.
+SELECT ROUND(AVG(price), 2) as avg_book_price
+FROM books;
+
 
 --Increase the price of all books published before 2000 by 10%.
 UPDATE books
 SET price = price * 1.10
 WHERE published_year < 2000;
+
 
 --  Delete customers who haven't placed any orders.
 DELETE FROM customers
