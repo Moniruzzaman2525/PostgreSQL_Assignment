@@ -26,3 +26,11 @@ CREATE TABLE orders (
     order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- Inserting sample data into the "books" table
+INSERT INTO books (title, author, price, stock, published_year) VALUES
+('Javascript The Good Parts', 'Moniruzzaman', 40, 10, 2020),
+('React js The Complete Guide', 'Ikhtiaj Arif', 35, 5, 2019),
+('Postgresql The Definitive Guide', 'Jhankar Mahbub', 30, 8, 2024),
+('Typescript The Definitive Guide', 'Abdul Kalam', 50, 3, 2022),
+('Redux The Definitive Guide', 'Mir', 20, 0, 2020),
+('Next js The Definitive Guide', 'Tonmoy Pervez', 25, 5, 2023);
