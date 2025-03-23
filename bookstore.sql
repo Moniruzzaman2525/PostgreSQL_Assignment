@@ -35,5 +35,13 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Redux The Definitive Guide', 'Mir', 20, 0, 2020),
 ('Next js The Definitive Guide', 'Tonmoy Pervez', 25, 5, 2023);
 
--- view all books from the "books" table
+-- get all books from the "books" table
 SELECT * FROM books;
+
+-- inserting sample data into the "customers" table
+INSERT INTO customers (name, email, joined_date) VALUES
+('Moniruzzaman', 'web.moniruzzaman1@gmail.com', '2025-01-10'),
+('Arif', 'arif@email.com', '2025-01-15'),
+('Anik', 'anik@email.com', '2025-01-20');
+
+
