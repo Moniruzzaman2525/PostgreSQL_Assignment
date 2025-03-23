@@ -34,3 +34,6 @@ INSERT INTO books (title, author, price, stock, published_year) VALUES
 ('Typescript The Definitive Guide', 'Abdul Kalam', 50, 3, 2022),
 ('Redux The Definitive Guide', 'Mir', 20, 0, 2020),
 ('Next js The Definitive Guide', 'Tonmoy Pervez', 25, 5, 2023);
+
+-- view all books from the "books" table
+SELECT * FROM books;
