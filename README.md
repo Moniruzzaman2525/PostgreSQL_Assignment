@@ -51,3 +51,7 @@ UPDATE table_name SET column_name = 'new_value' WHERE condition;
 
 **Answer**: ```JOIN``` অপারেশন দুটি বা ততোধিক টেবিলের মধ্যে সম্পর্ক স্থাপন করে, যেখানে আপনি একাধিক টেবিল থেকে ডেটা একত্রিত করতে পারেন। এটি ```INNER JOIN```, ```LEFT JOIN```, ```RIGHT JOIN``` ইত্যাদি রকমে ব্যবহার করা যেতে পারে।
 
+9. Explain the GROUP BY clause and its role in aggregation operations.
+
+**Answer**: ```GROUP BY``` ক্লজটি ব্যবহৃত হয় ডেটাকে গ্রুপ করার জন্য, যাতে আপনি গ্রুপভিত্তিক অ্যাগ্রিগেট ফাংশন যেমন ```COUNT()```, ```SUM()```, ```AVG()``` ইত্যাদি ব্যবহার করতে পারেন। উদাহরণস্বরূপ, আপনি গ্রুপের ভিত্তিতে গড় হিসাব করতে পারেন।
+
