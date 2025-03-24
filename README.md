@@ -46,3 +46,8 @@
 UPDATE table_name SET column_name = 'new_value' WHERE condition;
 
 ```
+
+8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+
+**Answer**: ```JOIN``` অপারেশন দুটি বা ততোধিক টেবিলের মধ্যে সম্পর্ক স্থাপন করে, যেখানে আপনি একাধিক টেবিল থেকে ডেটা একত্রিত করতে পারেন। এটি ```INNER JOIN```, ```LEFT JOIN```, ```RIGHT JOIN``` ইত্যাদি রকমে ব্যবহার করা যেতে পারে।
+
