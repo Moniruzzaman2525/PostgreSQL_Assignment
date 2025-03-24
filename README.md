@@ -16,7 +16,7 @@
 
  * **Foreign Key**: ফরেন কি হল একটি কলাম যা অন্য টেবিলের প্রাইমারি কির সাথে সম্পর্কিত থাকে, যা ডেটাবেসের মধ্যে সম্পর্ক তৈরি করে।
 
-4. What is the difference between the VARCHAR and CHAR data types?
+4. What is the difference between the ```VARCHAR``` and ```CHAR``` data types?
 
 **Answer**:
 
@@ -24,11 +24,11 @@
 
 * **CHAR**: এটি একটি স্থির দৈর্ঘ্যের স্ট্রিং ডেটা টাইপ। যদি স্ট্রিংয়ের দৈর্ঘ্য ছোট হয়, তবে বাকী স্থানে স্পেস পূর্ণ করা হয়।
 
-5. Explain the purpose of the WHERE clause in a SELECT statement.
+5. Explain the purpose of the WHERE clause in a ```SELECT``` statement.
 
 **Answer**: WHERE ক্লজটি ব্যবহার করা হয় ডেটাবেস থেকে নির্দিষ্ট শর্ত অনুযায়ী ডেটা বের করার জন্য। এটি একটি ফিল্টার হিসেবে কাজ করে, যেখানে আপনি নির্দিষ্ট শর্তের ভিত্তিতে রেকর্ড নির্বাচন করতে পারেন।
 
-6. What are the LIMIT and OFFSET clauses used for?
+6. What are the ```LIMIT``` and ```OFFSET``` clauses used for?
 
 **Answer**:
 
@@ -37,9 +37,11 @@
 * **OFFSET**: এটি ব্যবহৃত হয় নির্দিষ্ট সংখ্যক রেকর্ড বাদ দিয়ে বাকী রেকর্ডগুলি ফেরত দিতে। উদাহরণস্বরূপ, আপনি প্রথম ১০টি রেকর্ড বাদ দিয়ে পরবর্তী ১০টি রেকর্ড চান, তখন ```OFFSET``` 10 ব্যবহার করবেন।
 
 
-7. How can you modify data using UPDATE statements?
+7. How can you modify data using ```UPDATE``` statements?
 
-**Answer**: ```UPDATE``` স্টেটমেন্ট ব্যবহার করে আপনি টেবিলের কোনো নির্দিষ্ট রেকর্ডের মান পরিবর্তন করতে পারেন। ```SET``` ক্লজের মাধ্যমে আপনি যে কলামের মান পরিবর্তন করতে চান তা নির্দিষ্ট করতে পারেন, এবং ```WHERE``` ক্লজের মাধ্যমে সংশ্লিষ্ট সারি নির্বাচন করা হয়। যেমন:
+**Answer**: ```UPDATE``` স্টেটমেন্ট ব্যবহার করে আপনি টেবিলের কোনো নির্দিষ্ট রেকর্ডের মান পরিবর্তন করতে পারেন। ```SET``` ক্লজের মাধ্যমে আপনি যে কলামের মান পরিবর্তন করতে চান তা নির্দিষ্ট করতে পারেন, এবং ```WHERE``` ক্লজের মাধ্যমে সংশ্লিষ্ট সারি নির্বাচন করা হয়।
+
+### Example:
 
 ``` bash
 
@@ -47,11 +49,30 @@ UPDATE table_name SET column_name = 'new_value' WHERE condition;
 
 ```
 
-8. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
+8. What is the significance of the ```JOIN``` operation, and how does it work in PostgreSQL?
 
 **Answer**: ```JOIN``` অপারেশন দুটি বা ততোধিক টেবিলের মধ্যে সম্পর্ক স্থাপন করে, যেখানে আপনি একাধিক টেবিল থেকে ডেটা একত্রিত করতে পারেন। এটি ```INNER JOIN```, ```LEFT JOIN```, ```RIGHT JOIN``` ইত্যাদি রকমে ব্যবহার করা যেতে পারে।
 
-9. Explain the GROUP BY clause and its role in aggregation operations.
+9. Explain the ```GROUP BY``` clause and its role in aggregation operations.
 
 **Answer**: ```GROUP BY``` ক্লজটি ব্যবহৃত হয় ডেটাকে গ্রুপ করার জন্য, যাতে আপনি গ্রুপভিত্তিক অ্যাগ্রিগেট ফাংশন যেমন ```COUNT()```, ```SUM()```, ```AVG()``` ইত্যাদি ব্যবহার করতে পারেন। উদাহরণস্বরূপ, আপনি গ্রুপের ভিত্তিতে গড় হিসাব করতে পারেন।
 
+10. How can you calculate aggregate functions like ```COUNT()```, ```SUM()```, and ```AVG()``` in PostgreSQL?
+
+**Answer**: এই ফাংশনগুলি ব্যবহার করে আপনি ডেটার উপর বিভিন্ন গণনা করতে পারেন:
+
+* **COUNT()**: এটি নির্দিষ্ট কলামে কতটি রেকর্ড রয়েছে তা গণনা করে।
+
+* **SUM()**: এটি নির্দিষ্ট কলামের মোট মান যোগ করে।
+
+* **AVG()**: এটি নির্দিষ্ট কলামের গড় মান হিসাব করে।
+
+### Example:
+
+``` bash
+
+SELECT COUNT(*) FROM table_name;
+SELECT SUM(column_name) FROM table_name;
+SELECT AVG(column_name) FROM table_name;
+
+```
