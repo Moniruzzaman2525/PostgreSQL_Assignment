@@ -72,7 +72,9 @@ UPDATE table_name SET column_name = 'new_value' WHERE condition;
 ``` bash
 
 SELECT COUNT(*) FROM table_name;
+
 SELECT SUM(column_name) FROM table_name;
+
 SELECT AVG(column_name) FROM table_name;
 
 ```
